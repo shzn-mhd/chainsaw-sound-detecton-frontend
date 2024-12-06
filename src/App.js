@@ -79,6 +79,42 @@ const App = () => {
     }
   };
 
+  //Mock Data
+  // const mockData = [-43, -43, 47, 47, 159, 159, 297, 297, 431, 431, 487, 487, 483, 483, 461, 461, 371, 371, 283, 283, 189, 189, -15, -15];
+//   const mockData = [  0,   0,  -2,  -2,  -3,  -3,  -3,  -3,   1,   1,  -1,  -1,   -2,  -2,   1,   1,  -3,  -3,  -5,  -5,  -2,  -2,   0,   0];
+
+
+// const handleMockTest = async () => {
+//   try {
+//     // Simulate receiving data and converting it to a WAV file
+//     const wavFile = encodeWav(mockData);
+//     console.log("Generated WAV File:", wavFile);
+
+//     // Mock sending it to the backend
+//     const formData = new FormData();
+//     formData.append('file', wavFile);
+
+//     const response = await axios.post('http://localhost:5000/predict', formData, {
+//       headers: {
+//         'Content-Type': 'multipart/form-data',
+//       },
+//     });
+
+//     if (response.data.prediction === 'Hazard in forest area') {
+//       setMessage('Hazard detected: Chainsaw sound identified!');
+//       setAlarmPlaying(true);
+//     } else {
+//       setMessage('Safe: No chainsaw sound detected.');
+//       setAlarmPlaying(false);
+//     }
+//   } catch (error) {
+//     console.error("Error during mock test:", error);
+//     setMessage('Error testing sound detection. Check console for details.');
+//   }
+// };
+
+
+
   return (
     <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>
       <h1>Chainsaw Sound Detector</h1>
@@ -88,6 +124,11 @@ const App = () => {
       <button onClick={handleStop} style={{ padding: '5px 15px' }}>
         Stop
       </button>
+  
+      {/* <button onClick={handleMockTest} style={{ marginTop: '10px', padding: '5px 15px' }}>
+        Mock Test WAV Conversion
+      </button> */}
+
       <div style={{ marginTop: '20px', fontSize: '18px' }}>{message}</div>
       {alarmPlaying && (
         <audio src="/alarm.mp3" autoPlay loop />
