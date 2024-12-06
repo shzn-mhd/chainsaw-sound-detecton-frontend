@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import mqtt from 'mqtt';
-import { encodeWav } from './utils/wavEncoder'; // Utility to convert data to .wav file
+import { encodeWav } from './utils/wavEncoder';
 
 const App = () => {
   const [message, setMessage] = useState('');
